@@ -65,7 +65,7 @@ with st.sidebar:
         with col2:
             st.button("❌", key=f"del_{i}", on_click=lambda i=i: delete_question(i))  # Delete button
     
-    st.button(label="SAVE JSON 📄",on_click=lambda file_name = sub_name: save_json(file_name))
+    st.download_button(label="DOWNLOAD JSON 📄",file_name="questions.json",data = json.dumps(st.session_state.Questions))
 
 
 # **Main Content: Show Only Selected Question**
